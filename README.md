@@ -13,7 +13,7 @@ Fungsi Plugin "Pengurus" ini meliputi beberapa fungsi antara lain:
 
 #Pentunjuk Penginstalaan:
 
-Download file plugin "Pengurus" ini dalam bentuk .zip dan nama file.zip tersebut dengan pengurus.zip lalu upload lewat dashboard anda pada pilihan plugin dan add new plugin upload.
+Download file plugin "Pengurus" ini dalam bentuk .zip dan nama file.zip tersebut dengan <code>pengurus.zip</code> lalu upload lewat dashboard anda pada pilihan plugin dan add new plugin upload.
 
 Plugin ini khusus difungsikan untuk menambahkan fitur fungsi dan fasilitas untuk menagement data profile pengurus pada theme stadart Cabang HMI. Untuk themes selain themes standart HMI Cabang masih belum pada tahap test/ dicoba lebih lanjut terhadap kompatible tidaknya.
 
