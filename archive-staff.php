@@ -1,10 +1,10 @@
 <?php
-/**
- * The template for displaying Archive pages.
- *
- * @package WordPress
- * @subpackage Bootstrap
- */
+/*
+* Template Single Profile Staff
+* Author: Albert Sukmono
+* Description: Single Template Plugin "Staff" for view content post profile
+*/
+
 get_header(); ?>
 
     <?php if (have_posts()) :
@@ -14,9 +14,9 @@ get_header(); ?>
     <div class="container">
         <div class="row">
             <div class="span12">
-                <?php if (function_exists('bootstrapwp_breadcrumbs')) {
-                bootstrapwp_breadcrumbs();
-            } ?>
+                <?php if (function_exists('bootstrapwp_breadcrumbs_staff')) {
+                bootstrapwp_breadcrumbs_staff();
+                } ?>
             </div>
         </div>
 
@@ -61,7 +61,7 @@ get_header(); ?>
                                 );
                             }
                         } else {
-                            _e('Arsip Profile Pengurus', 'bootstrapwp');
+                            _e('Arsip Staff', 'bootstrapwp');
                         }
                         ?></h2>
                 </header>
@@ -72,23 +72,27 @@ get_header(); ?>
 
                 <?php while (have_posts()) : the_post(); ?>
                     <div <?php post_class(); ?>>
-                        <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><h3><?php the_title();?></h3></a>
                         <div class="row">
                             <?php // Post thumbnail conditional display.
                             if ( bootstrapwp_autoset_featured_img() !== false ) : ?>
                                 <div class="span2">
 									<div class="image-headline">
+									<a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
                                     <?php if ( has_post_thumbnail() ) {
 									the_post_thumbnail('thumbnail', array('class' => 'alignleft'));
 									} else { ?>
 									<img style="width:150px;height:150px;" src="<?php bloginfo('template_directory'); ?>/img/no-image-thumb.svg" alt="<?php the_title(); ?>" />
 									<?php } ?>
+									</a>
 									</div>
                                 </div>
                                 <div class="span6">
                             <?php else : ?>
                                 <div class="span8">
                             <?php endif; ?>
+									<div style="font-size:20px;border-bottom: solid 1px #ddd;margin-bottom: 10px;padding-bottom: 10px;">
+										<?php the_title();?> : <a href="<?php the_permalink(); ?>" title="<?php the_title();?>"><?php echo esc_html( get_post_meta( get_the_ID(), 'nama', true ) ); ?></a>
+									</div>
                                     <?php echo get_excerpt(555); ?>
                                 </div>
                         </div><!-- /.row -->
@@ -101,5 +105,5 @@ get_header(); ?>
             <?php endif; ?>
         </div>
 
-    <?php get_sidebar('office'); ?>
-    <?php get_footer(); ?>
+<?php get_sidebar('staff'); ?>
+<?php get_footer(); ?>
